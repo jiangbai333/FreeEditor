@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="initDaoTmep">	
+    <select id="getList" resultType="java.util.Map" parameterType="net.sf.json.JSONObject" >
+        <choose>
+            <when test="sql != null and sql != ''">
+                ${sql}
+            </when>
+            <otherwise>
+                select 
+                <choose>
+                    <when test="field != null and field != ''">
+                        ${field}
+                    </when>
+                    <otherwise>
+                        *
+                    </otherwise>
+                </choose>	
+                from 
+                <if test="table != null and table != '' ">
+                    `${table}`
+                </if>
+                <if test="where != null and where != '' ">
+                    where  ${where} 
+                </if>
+            </otherwise>
+        </choose>
+    </select>
+</mapper>
