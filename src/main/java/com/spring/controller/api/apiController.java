@@ -1,17 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.spring.controller.api;
 
+import com.filehandle.FileHandle;
 import com.spring.service.impl.api.apiService;
+
 import java.io.IOException;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,6 +24,13 @@ public class apiController {
     @Autowired
     private apiService service;
     
+    @RequestMapping(value="/getFiles", method = RequestMethod.GET, produces = "text/html;charset=UTF-8")
+    public @ResponseBody String getFiles() throws IOException{
+        JSONArray jr = JSONArray.fromObject(FileHandle.fromObject("C:\\Users\\hsoft\\Desktop\\SpringMVC\\src").tree());
+        
+        return jr.toString();
+    }
+
     @RequestMapping(value="/testData", method = RequestMethod.GET, produces = "text/html;charset=UTF-8")
     public @ResponseBody String getMenuList(){
         return new JSONObject().accumulate("key", "中文").toString();

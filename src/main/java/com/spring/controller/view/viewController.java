@@ -25,7 +25,7 @@ public class viewController {
      * @param viewName 视图名：要渲染的视图文件名
      * 若要渲染page/menu目录下的view视图，则url为：/display/menu-view/
      * 若直接渲染page目录下的view视图，则url为：/display/-view/
-     * @return
+ * @return
      */
     @RequestMapping(value = "/{group}-{view}", method = RequestMethod.GET)
     public String display(@PathVariable("group") String group, @PathVariable("view") String viewName) {

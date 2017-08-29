@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello FreeEditor by b-jiang</h1>
+        <h1>Hello FreeEditor by b-jiang deploy to server</h1>
         <div id="main" style="width: 600px;height:400px;"></div>
             <script type="text/javascript">
                 // 基于准备好的dom，初始化echarts实例

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.View;
 
 //测试拦截器1
 public class handlerInterceptor implements HandlerInterceptor{
@@ -43,8 +44,7 @@ public class handlerInterceptor implements HandlerInterceptor{
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response,
             Object handler, ModelAndView modelAndView) throws Exception {
-        
-        System.out.println("第一个拦截器----执行中");
+        System.out.println();
     }
     //在执行handler方法之后执行
     //应用场景：可以使用统一的异常处理，还可以用于统一的日志处理

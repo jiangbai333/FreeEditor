@@ -15,10 +15,8 @@
     <context:component-scan base-package="com.spring"/>
     
     <!-- 资源映射 -->
-    <mvc:resources location="/WEB-INF/pages/" mapping="/page/**"/>
+    <mvc:resources mapping="/page/**" location="/WEB-INF/page/"/>
     <mvc:resources mapping="/resources/**" location="/WEB-INF/resources/" />
-    <mvc:resources mapping="/images/**" location="/WEB-INF/images/" />
-    <mvc:resources mapping="/js/**" location="/WEB-INF/js/" />
     <!-- 视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/page/"/>
